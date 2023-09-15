@@ -7,7 +7,6 @@ import dotenv from 'dotenv';
 import Follower, {FollowerDocument} from './models/Follower';
 import bcrypt from 'bcrypt';
 import User, { UserDocument } from './models/User';
-import { authenticateUser } from './authMiddleware';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import routes from './routes/routes';
 
