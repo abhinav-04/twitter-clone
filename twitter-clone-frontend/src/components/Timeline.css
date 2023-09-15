@@ -1,0 +1,137 @@
+/* src/components/Timeline.css */
+
+.timeline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f8fa; /* Twitter's background color */
+  }
+  
+  .timeline {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px; /* Adjust as needed */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tweet-form {
+    margin-bottom: 20px;
+  }
+  
+  .tweet-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .tweet-form button {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .tweet-form button:hover {
+    background-color: #0b6fae;
+  }
+  
+  .tweets {
+    display: flex;
+    flex-direction: column; /* Display tweets in a column layout */
+    gap: 10px; /* Spacing between tweets */
+  }
+  
+  /* src/components/Timeline.css */
+
+/* Existing styles for other elements */
+
+.tweet {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .tweet:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tweet-text {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  
+  .tweet-info {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #657786;
+  }
+  
+  .tweet-author {
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  .tweet-created-at {
+    margin-left: auto;
+  }
+  
+  .tweet-card {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .tweet-text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .tweet-options {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #657786;
+  }
+  
+  .tweet-options > span {
+    margin-right: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tweet-options > span:hover {
+    color: #1da1f2;
+  }
+  
+  .tweet-options > span > svg {
+    margin-right: 4px;
+  }
+  
+
+
+  /* Additional styles as needed */
+  

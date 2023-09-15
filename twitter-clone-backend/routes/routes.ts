@@ -102,6 +102,7 @@ router.post('/tweets', async (req, res) => {
   
       const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
       const userId = decoded.userId;
+      
   
       const tweet = new Tweet({ text, user: userId });
       await tweet.save();
@@ -112,6 +113,7 @@ router.post('/tweets', async (req, res) => {
     }
   });
 
+// Route to get the timeline of tweets from followed users
 // Route to get the timeline of tweets from followed users
 router.get('/timeline', async (req, res) => {
     try {
@@ -132,14 +134,28 @@ router.get('/timeline', async (req, res) => {
       followingIds.push(userId);
   
       // Fetch tweets from the users the authenticated user is following
-      const timelineTweets = await Tweet.find({ user: { $in: followingIds } })
-        .sort({ createdAt: -1 }) // Sort by most recent
-        .exec();
+      const timelineTweets = await Tweet.aggregate([
+        {
+          $match: { user: { $in: followingIds } },
+        },
+        {
+          $lookup: {
+            from: 'users', // Use the name of your User collection
+            localField: 'user',
+            foreignField: '_id',
+            as: 'userDetails',
+          },
+        },
+        {
+          $sort: { createdAt: -1 },
+        },
+      ]);
   
       res.status(200).json(timelineTweets);
     } catch (error) {
       res.status(500).json({ error: 'Timeline retrieval failed' });
     }
   });
+  
 
 export default router;
