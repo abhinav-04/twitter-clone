@@ -156,6 +156,21 @@ router.get('/timeline', async (req, res) => {
       res.status(500).json({ error: 'Timeline retrieval failed' });
     }
   });
+
+
+  router.get('/users', async (req, res) => {
+    try {
+      // Query the database to get all users
+      const users = await User.find({}, 'username'); // Replace 'username' with the fields you want to retrieve
+  
+      // Send the list of users as a JSON response
+      res.json(users);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).json({ error: 'Error fetching users' });
+    }
+  });
+  
   
 
 export default router;

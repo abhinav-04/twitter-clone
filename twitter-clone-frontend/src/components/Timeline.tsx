@@ -8,6 +8,7 @@ import Tweet from '../types/Tweet';
 // Basic CSS styles for demonstration (customize as needed)
 import './Timeline.css';
 import SideNav from './SideNav';
+import RightSidebar from './RightSidebar';
 
 const Timeline: React.FC = () => {
   const [tweets, setTweets] = useState<Tweet[]>([]);
@@ -50,7 +51,7 @@ const Timeline: React.FC = () => {
 
   return (
     <div className="timeline-container">
-        {/* <SideNav /> */}
+        <SideNav />
       <div className="timeline">
         <div className="tweet-form">
           <textarea
@@ -75,6 +76,7 @@ const Timeline: React.FC = () => {
 
         </div>
       </div>
+        <RightSidebar/>
     </div>
   );
 };
